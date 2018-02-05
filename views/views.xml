@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="view_courses_form">
+            <field name="name">moodle_class</field>
+            <field name="res_model">moodle.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a Token
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

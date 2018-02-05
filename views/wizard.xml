@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <data>
+
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">moodle.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Configure Moodle">
+                    <group>
+                        <field name="moodle_token" required="True"/>
+                    </group>
+                    <footer>
+                        <button name="make_connection" type="object"
+                                string="Test the connection" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="configure_moodle">
+            <field name="name">Configure Moodle</field>
+            <field name="res_model">moodle.wizard</field>
+            <field name="view_id" ref="wizard_form_view"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!--<record id="base.open_menu" model="ir.actions.todo">
+            <field name="action_id" ref="configure_moodle"/>
+            <field name="state">open</field>
+        </record>-->
+
+
+    </data>
+
+</odoo>

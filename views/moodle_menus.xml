@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+
+        <menuitem id="main_moodle_menu" name="Moodle Tools"/>
+        <menuitem id="moodle_menu" name="Moodle" parent="main_moodle_menu"/>
+
+
+        <!-- View courses menu-->
+        <menuitem id="view_courses" parent="moodle_menu"
+                  name="Courses" action="view_courses_form"/>
+
+        <!-- Configuration-->
+        <menuitem id="configuration_menu"  parent="moodle_menu"
+                  name="Configure Moodle" action="configure_moodle"/>
+
+
+    </data>
+</odoo>
