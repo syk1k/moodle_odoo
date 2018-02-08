@@ -15,6 +15,5 @@
         <menuitem id="configuration_menu"  parent="moodle_menu"
                   name="Configure Moodle" action="configure_moodle"/>
 
-
     </data>
 </odoo>
