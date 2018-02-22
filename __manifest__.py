@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "moodle_tools",
+    'name': "Moodle",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Module that allows connection to Moodle from Odoo v11.
+        """,
 
     'description': """
-        Long description of module's purpose
+        This module makes Moodle management possible from Odoo v11 and easier.
     """,
 
     'author': "Kalamar",

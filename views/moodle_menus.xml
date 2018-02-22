@@ -13,7 +13,9 @@
 
         <!-- Configuration-->
         <menuitem id="configuration_menu"  parent="moodle_menu"
-                  name="Configure Moodle" action="configure_moodle"/>
+                  name="Configure Moodle" action="configure_moodle"/> <!-- Moodle Configuration menu-->
+
+
 
     </data>
 </odoo>

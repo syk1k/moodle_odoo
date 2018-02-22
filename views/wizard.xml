@@ -19,7 +19,7 @@
                     </footer>
                 </form>
             </field>
-        </record>
+        </record> <!-- Moodle confoguration wizard -->
 
         <record model="ir.actions.act_window" id="configure_moodle">
             <field name="name">Configure Moodle</field>
@@ -28,13 +28,68 @@
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
-        </record>
+        </record> <!-- Moodle Configuration action model -->
 
         <!--<record id="base.open_menu" model="ir.actions.todo">
             <field name="action_id" ref="configure_moodle"/>
             <field name="state">open</field>
         </record>-->
 
+        <record model="ir.ui.view" id="create_course_wizard">
+            <field name="name">wizard.form</field>
+            <field name="model">moodle.courses</field>
+            <field name="arch" type="xml">
+                <form string="Create a Course">
+                    <group>
+                        <field name="token" required="True"/>
+                        <field name="course_full_name" required="True"/>
+                        <field name="course_short_name" required="True"/>
+                        <field name="course_category" eval="categories" required="True"/>
+                        <field name="course_summary"/>
+                        <field name="course_start_date"/>
+                        <field name="course_end_date"/>
+                    </group>
+                    <footer>
+                        <button name="create_course" type="object"
+                                string="Create Course" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record> <!-- Create course wizard form -->
+
+        <record model="ir.actions.act_window" id="create_course">
+            <field name="name">Create Course</field>
+            <field name="res_model">moodle.courses</field>
+            <field name="view_id" ref="create_course_wizard"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="create_course_menu" parent="moodle_menu"
+                  name="Create a Course" action="create_course"/>
+
+        <!--<record model="ir.ui.view" id="create_course_wizard">
+            <field name="name">wizard.form</field>
+            <field name="model">moodle.category</field>
+            <field name="arch" type="xml">
+                <form string="Create a Category">
+                    <group>
+                        <field name="token" required="True"/>
+                        <field name="parent_category" required="True"/>
+                        <field name="category_name" required="True"/>
+                        <field name="category_id_number" required="True"/>
+                        <field name="category_description"/>
+                    </group>
+                    <footer>
+                        <button name="create_course" type="object"
+                                string="Create Course" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>-->
 
     </data>
 
